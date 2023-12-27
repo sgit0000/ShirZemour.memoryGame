@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+   font-family: 'Poppins', sans-serif;
+   font-size: 16px;
+}
+
+* {
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body{
+   padding: 20px;
+   width: 100vw;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 1.5rem;
+   /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(189, 182, 182)" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,224C640,245,800,203,960,192C1120,181,1280,203,1360,213.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>');   background-color: #ffffff; */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-x: left;
+  background-position-y: bottom ;
+
+}
+
+.playerName, .round{
+   
+   color:rgb(183, 179, 179) ;
+}
+
+/* yinyang */
+
+.yinyang{
+  display: flex;
+  justify-content: center;
+  padding: 0,50px;
+flex-wrap: wrap;
+
+}
+
+ .circle {
+  
+   width:150px;
+   height:150px;
+   background:black;
+   border-radius:100%;
+   text-align:center;
+   animation:rotate 40000s infinite;
+ }
+ .circle .yin {
+   width:75px;
+   height:75px;
+   background:white;
+   border-radius:100%;
+ }
+ 
+ .circle .yang {
+   width:75px;
+   height:75px;
+   background:black;
+   border-radius:100%;
+   margin-top:-81px;
+   z-index:auto;
+   position: absolute;
+   margin-left:44.5px;
+ 
+ }
+ 
+ .feher {
+   width:75px;
+   height:150px;
+   background:white;
+   display:inline-block;
+   margin-top:-75px;
+   border-top-right-radius:75px;
+   border-bottom-right-radius:75px;
+ }
+ 
+ .p-black {
+   width:25px;
+   height:25px;
+   background:black;
+   border-radius:100%;
+   position:absolute;
+   margin-top:-130px;
+   margin-left:60px;
+ }
+ 
+ .p-white {
+   width:25px;
+   height:25px;
+   background:white;
+   border-radius:100%;
+   position:absolute;
+   margin-top:-57px;
+   margin-left:60px;
+ }
+ 
+@keyframes rotate {
+   from {transform:rotate(0deg);}
+   to {transform:rotate(-3600000deg);}
+ }
+
+/*  _____________________ */
+
+
+section{
+   display: grid; 
+   grid-template-columns:repeat(5,minmax(5rem,10rem) ) ;
+   grid-template-rows:repeat(2,minmax(5rem,10rem)) ;
+   grid-gap:1rem; 
+   perspective: 800px;
+}
+.card{
+   position: relative;
+   transform-style: preserve-3d ;
+   transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+ 
+   box-shadow:rgba(0,0,0,0.2) 0px 5px 15px;
+   
+}
+.face,
+.back{
+   width: 100%;
+   height:100% ;
+   position: absolute;
+   pointer-events: none;
+  
+}
+
+.face{
+   transform: rotateY('-180deg');
+}
+
+.back{
+   background: rgb(189, 182, 182);
+   backface-visibility: inherit;
+   
+}
+.flipped{
+   box-shadow:rgba(10, 96, 216, 0.543) 0px 5px 15px;
+}
+
+.toggleCard{
+   .back{
+      background: rgba(189, 182, 182, 0);
+   }
+   transform: rotateY('180deg');
+} 
+
+
+
+ .reset{
+   border-radius: 2px;
+   align-items: center;
+}
